@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Protegida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #loginForm {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #message {
+            display: none;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 8px;
+            width: 100%;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginForm">
+        <h2>Ingresa la contraseña</h2>
+        <input type="password" id="passwordInput" placeholder="Contraseña">
+        <button onclick="checkPassword()">Entrar</button>
+    </div>
+    <div id="message">
+        ¿Por qué estás abriendo links y poniendo contraseñas? xd
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            if (password === 'Dorian') {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('message').style.display = 'block';
+                document.body.style.background = `rgb(
+                    ${Math.random() * 255},
+                    ${Math.random() * 255},
+                    ${Math.random() * 255}
+                )`;
+            } else {
+                alert('Contraseña incorrecta');
+            }
+        }
+    </script>
+</body>
+</html>
